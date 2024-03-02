@@ -20,9 +20,13 @@ export default function ProfilePage() {
     }
 
     const getUserDetails = async () => {
-        const res = await axios.get("/api/users/user");
-        console.log(res.data);
-        setData(res.data.data._id);
+        try {
+            const res = await axios.get("/api/users/user");
+            console.log(res.data);
+            setData(res.data.data._id);
+        } catch (error: any) {
+            console.log(error.message);
+        }
     }
 
     useEffect(() => {

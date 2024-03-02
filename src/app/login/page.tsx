@@ -39,6 +39,11 @@ const LoginPage = () => {
         }
     }, [user])
 
+    const forgotPassword = async () => {
+        // sending verification email
+        router.push("/forgotpassemail");
+    }
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <h1>{loading ? "Processing" : "Log in"}</h1>
@@ -66,6 +71,11 @@ const LoginPage = () => {
             <button
                 onClick={onLogin}
                 className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">Login
+            </button>
+
+            <button
+                onClick={forgotPassword}
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">Forgot Password
             </button>
 
             <Link href="/signup">SignUp Here</Link>

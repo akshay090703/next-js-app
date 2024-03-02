@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
     path === "/login" ||
     path === "/signup" ||
     path === "/verifyemail" ||
-    path === "/forgotpassword";
+    path === "/forgotpassemail";
   const token = request.cookies.get("token")?.value || "";
 
   if (isPublic && token) {
@@ -32,5 +32,6 @@ export const config = {
     "/profile/:path*",
     "/verifyemail",
     "/forgotpassword",
+    "/forgotpassemail",
   ],
 };

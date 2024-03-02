@@ -26,6 +26,7 @@ export default function ProfilePage() {
             setData(res.data.data._id);
         } catch (error: any) {
             console.log(error.message);
+            toast.error(error.message);
         }
     }
 

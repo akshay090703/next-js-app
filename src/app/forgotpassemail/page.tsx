@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import toast from 'react-hot-toast';
 
 const ForgotPassEmailPage = () => {
     const router = useRouter();
@@ -13,6 +14,8 @@ const ForgotPassEmailPage = () => {
     const emailValidator = async () => {
         try {
             const response = await axios.post("/api/users/forgotpassemail", { email });
+
+            toast.success("Password change link sent!")
         } catch (error: any) {
             console.log(error.message);
         }
